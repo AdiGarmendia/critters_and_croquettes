@@ -6,63 +6,63 @@ print(Bartholomew)
 Bartholomew.feed()
 print(f'{Bartholomew.name} the {Bartholomew.species} is available to pet during the {Bartholomew.shift} shift.')
 
-Lassie = Pig("Lassie", "Tibetian Straight Tailed Pig", "morning", "the in-laws")
+Lassie = Pig("Lassie", "Tibetian Straight Tailed Pig", "morning", "the in-laws", 2)
 print(Lassie)
 Lassie.feed()
 print(f'{Lassie.name} the {Lassie.species} is available to pet during the {Lassie.shift} shift.')
 
-Fluffy = Porcupine("Fluffy", "Curmudgeonly Porcupine", "afternoon", "prozac")
+Fluffy = Porcupine("Fluffy", "Curmudgeonly Porcupine", "afternoon", "prozac", 3)
 print(Fluffy)
 Fluffy.feed()
 print(f'{Fluffy.name} the {Fluffy.species} is available to pet during the {Fluffy.shift} shift.')
 
-Tank = Armadillo("Tank", "Southern Yard Destroyer Armadillo", "morning", "a local golf course")
+Tank = Armadillo("Tank", "Southern Yard Destroyer Armadillo", "morning", "a local golf course", 4)
 print(Tank)
 Tank.feed()
 print(f'{Tank.name} the {Tank.species} is available to pet during the {Tank.shift} shift.')
 
-Beaudreaux = Groundhog("Beaudreaux", "Louisiana Drunken Groundhog", "afternoon", "a hobo")
+Beaudreaux = Groundhog("Beaudreaux", "Louisiana Drunken Groundhog", "afternoon", "a hobo", 5)
 print(Beaudreaux)
 Beaudreaux.feed()
 print(f'{Beaudreaux.name} the {Beaudreaux.species} is available to pet during the {Beaudreaux.shift} shift.')
 
-Toby = Lawyers("Toby", "The Worst", "HR reports")
+Toby = Lawyers("Toby", "The Worst", "HR reports", 6)
 print(Toby)
 Toby.feed()
 
-Bitey = Viper("Bitey", "Pit Viper", "Roxanne's cats")
+Bitey = Viper("Bitey", "Pit Viper", "Roxanne's cats", 7)
 print(Bitey)
 Bitey.feed()
 
-Karen = Lobbyist("Karen", "Antivaxxer Lobbyist", "bubonic plague")
+Karen = Lobbyist("Karen", "Antivaxxer Lobbyist", "bubonic plague", 8)
 print(Karen)
 Karen.feed()
 
-Kaa = Python("Kaa", "Grey Cartoon Python", "Mowgli")
+Kaa = Python("Kaa", "Grey Cartoon Python", "Mowgli", 9)
 print(Kaa)
 Kaa.feed()
 
-Dipper = Cobra("Dipper", "Spitting Cobra", "Skoal")
+Dipper = Cobra("Dipper", "Spitting Cobra", "Skoal", 10)
 print(Dipper)
 Dipper.feed()
 
-Wally = Gator("Wally", "Hanna Barbera Gator", "large children")
+Wally = Gator("Wally", "Hanna Barbera Gator", "large children", 11)
 print(Wally)
 Wally.feed()
 
-Cuddles = Gar("Cuddles", "Eastern Brim Killer Gar", "Nemo")
+Cuddles = Gar("Cuddles", "Eastern Brim Killer Gar", "Nemo", 12)
 print(Cuddles)
 Cuddles.feed()
 
-Pickles = Beaver("Pickles", "Angry Beaver", "steroids")
+Pickles = Beaver("Pickles", "Angry Beaver", "steroids", 13)
 print(Pickles)
 Pickles.feed()
 
-JabberJaws = Shark("Jabber Jaws", "Great White Shark", "bachelorettes")
+JabberJaws = Shark("Jabber Jaws", "Great White Shark", "bachelorettes", 14)
 print(JabberJaws)
 JabberJaws.feed()
 
-Mechazilla = Godzilla("Mechazilla", "Robot", "a cold fusion reactor")
+Mechazilla = Godzilla("Mechazilla", "Robot", "a cold fusion reactor", 15)
 print(Mechazilla)
 Mechazilla.feed()
 

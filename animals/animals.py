@@ -1,19 +1,21 @@
 # import the python datetime module to help us create a timestamp
 from datetime import date
 
-class Llama:
-
-    def __init__(self, name, species, shift, food, chip_num ):
-        # Establish the properties of each animal
-        # with a default value
+class Animal:
+    def __init__(self, name, species, food, chip_num):
         self.name = name
         self.species = species
-        self.walking = True
-        self.shift = shift
         self.food = food
-        self.date_added = date.today()
         self.__chip_number = chip_num
+        self.date_added = date.today()
 
+    def feed(self):
+        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+
+    def __str__(self):
+        return f"{self.name} is a {self.species}."
+
+    
     @property #getter
     def chip_number(self):
         try:
@@ -29,253 +31,113 @@ class Llama:
             raise TypeError("Just do it right.")
 
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+    # Designate Llama as a child class by adding (Animal) after the class name
+class Llama(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-        
-class Pig:
-
-    def __init__(self, name, species, shift, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    # Remove redundant properties from Llama's initialization, and set their values via Animal
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift # stays on Llama because not all animals have shifts
         self.walking = True
-        self.shift = shift
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+            
+class Pig(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Porcupine:
-
-    def __init__(self, name, species, shift, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift 
         self.walking = True
+
+class Porcupine(Animal):
+
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
-        self.food = food
-        self.date_added = date.today()
-
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Armadillo:
-
-    def __init__(self, name, species, shift, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
         self.walking = True
+
+class Armadillo(Animal):
+
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
-        self.food = food
-        self.date_added = date.today()
-
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Groundhog:
-
-    def __init__(self, name, species, shift, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
         self.walking = True
+
+    def feed(self):
+        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}. {self.food} is some expensive stuff!')
+
+class Groundhog(Animal):
+
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
-        self.food = food
-        self.date_added = date.today()
+        self.walking = True
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Lawyers(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Lawyers:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
-        self.date_added = date.today()
 
     def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")} but he didnt deserve it because he is the WORST!')
 
-    def __str__(self):
-        return f"{self.name} is {self.species}."
 
-class Viper:
+class Viper(Animal):
 
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Lobbyist(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Lobbyist:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Python(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Python:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Cobra(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Cobra:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Gator(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Gator:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Gar(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Gar:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Beaver(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Beaver:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Shark(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Shark:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
-        self.date_added = date.today()
 
-    def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+class Godzilla(Animal):
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
-
-class Godzilla:
-
-    def __init__(self, name, species, food ):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
+    def __init__(self, name, species, food, chip_num ):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
-        self.date_added = date.today()
 
     def feed(self):
-      print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}."
+        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}. {self.name} is going to bankrupt us')
 
 
 
