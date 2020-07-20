@@ -8,6 +8,9 @@ class PettingZoo:
     def addAnimals(self, animals):
         self.animals.extend(animals)
 
+    @property #getter
+    def last_critter_added(self):
+        return f"{self.animals[-1].name} the {self.animals[-1].species}"
 
 class SnakePit:
 
@@ -19,7 +22,9 @@ class SnakePit:
     def addAnimals(self, animals):
         self.animals.extend(animals)
    
-
+    @property #getter
+    def last_critter_added(self):
+        return f"{self.animals[-1].name} the {self.animals[-1].species}"
 
 class WetLands:
 
@@ -28,5 +33,10 @@ class WetLands:
         self.description = "Jaws ain't got nothing on us!!!"
         self.animals = list()
 
+
     def addAnimals(self, animals):
         self.animals.extend(animals)
+
+    @property #getter
+    def last_critter_added(self):
+        return f"{self.animals[-1].name} the {self.animals[-1].species}"

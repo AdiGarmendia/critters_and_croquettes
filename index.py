@@ -1,7 +1,7 @@
 from animals import Llama, Pig, Porcupine, Armadillo, Groundhog, Lawyers, Viper, Lobbyist, Python, Cobra, Gator, Gar, Beaver, Shark, Godzilla
 from attractions import PettingZoo, WetLands, SnakePit
 
-Bartholomew = Llama("Bartholomew", "3 legged Peruvian Llama", "midday", "small children")
+Bartholomew = Llama("Bartholomew", "3 legged Peruvian Llama", "midday", "small children", 1)
 print(Bartholomew)
 Bartholomew.feed()
 print(f'{Bartholomew.name} the {Bartholomew.species} is available to pet during the {Bartholomew.shift} shift.')
@@ -92,3 +92,6 @@ for animal in danger_bay.animals:
     print(f'You can find {animal.name} the {animal.species} in {danger_bay.attraction_name}.')
 
 report_animals_by_attractions(danger_bay, slither_inn, varmint_village)
+
+print(Bartholomew.chip_number)
+print(danger_bay.last_critter_added)

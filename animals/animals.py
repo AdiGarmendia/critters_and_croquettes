@@ -3,7 +3,7 @@ from datetime import date
 
 class Llama:
 
-    def __init__(self, name, species, shift, food ):
+    def __init__(self, name, species, shift, food, chip_num ):
         # Establish the properties of each animal
         # with a default value
         self.name = name
@@ -12,6 +12,22 @@ class Llama:
         self.shift = shift
         self.food = food
         self.date_added = date.today()
+        self.__chip_number = chip_num
+
+    @property #getter
+    def chip_number(self):
+        try:
+            return self.__chip_number
+        except AttributeError:
+            return 0
+    
+    @chip_number.setter #setter
+    def chip_number(self, new_chip_number):
+        if type(new_chip_number) is int:
+            self.__chip_number = new_chip_number
+        else:
+            raise TypeError("Just do it right.")
+
 
     def feed(self):
       print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
