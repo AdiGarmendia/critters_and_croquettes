@@ -1,5 +1,6 @@
 from animals import Llama, Pig, Porcupine, Armadillo, Groundhog, Lawyers, Viper, Lobbyist, Python, Cobra, Gator, Gar, Beaver, Shark, Godzilla
 from attractions import PettingZoo, WetLands, SnakePit
+from animals import Goose
 
 Bartholomew = Llama("Bartholomew", "3 legged Peruvian Llama", "midday", "small children", 1)
 print(Bartholomew)
@@ -95,3 +96,8 @@ report_animals_by_attractions(danger_bay, slither_inn, varmint_village)
 
 print(Bartholomew.chip_number)
 print(danger_bay.last_critter_added)
+
+bob = Goose("Bob", "Hate filled devil spawn goose", "car batteries", 16)
+bob.run()
+bob.swim()
+
